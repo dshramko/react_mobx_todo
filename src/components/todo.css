@@ -1,0 +1,89 @@
+body {
+  background-color: #2c3e50;
+}
+
+#root {
+  margin: 50px 0;
+}
+
+.container {
+  background: #fff;
+  width: 500px;
+  margin: 0 auto;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 rgba(0,0,0,.6);
+  padding: 15px;
+}
+
+.form-group {
+  margin: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 7px;
+  margin-top: 4px;
+}
+
+.todo-group {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  border-bottom: 1px solid #000;
+}
+
+.todo-group > input {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ccc;
+  border-radius: 1px;
+  border-width: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+  height: 1.5rem;
+  position: relative;
+  transition: all .3s linear;
+  width: 1.5rem;
+}
+
+.todo-group > input:checked {
+  background-color: #F17B73;
+}
+
+.todo-group > input:focus {
+  box-shadow: none;
+  outline: 0 none;
+}
+
+.todo-done {
+  color: #F17B73;
+  text-decoration: line-through;
+}
+
+.task-completed {
+  float: right;
+  text-transform: uppercase;
+  padding-right: 40px;
+  color: #777;
+}
+
+.btn-clear {
+  margin-left: 40px;
+  color: #420707;
+  background-color: #F17B73;
+  padding: 7px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-clear:hover {
+  background-color: #e88f88;
+}

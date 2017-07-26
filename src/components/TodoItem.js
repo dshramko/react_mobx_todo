@@ -12,10 +12,10 @@ class TodoItem extends React.Component {
   render () {
     const { item } = this.props
     return (
-      <li>
+      <div className={item.completed === true ? 'todo-group todo-done' : 'todo-group' }>
         {item.task}
-        <input type="checkbox" checked={item.completed} onChange={this.toggleCompleted.bind(this, item)}/>
-      </li>
+        <input type="checkbox" checked={item.completed} onChange={this.toggleCompleted.bind(this, item)} className='todo-element' />
+      </div>
     );
   }
 }

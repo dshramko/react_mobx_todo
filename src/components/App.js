@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import DevTools from 'mobx-react-devtools'
 import TodoItem from './TodoItem'
+import './todo.css'
 
 @inject("todostore")
 @observer
@@ -27,24 +28,25 @@ export default class App extends Component {
 	render() {
 		const {filter, todos, filteredTodos, clearTodos} = this.props.todostore
 		return (
-			<div>
-				<div>
+			<div className='container'>
+				<div className='form-group'>
 					New task:
-					<input type="text"  onKeyPress={this.createNew} />
+					<input type="text"  onKeyPress={this.createNew} className='form-control' />
 				</div>
-				<div>
+				<div className='form-group'>
 					Filter:
-					<input type="text" value={filter} onChange={this.filter}/>
+					<input type="text" value={filter} onChange={this.filter} className='form-control' />
 				</div>
-				<ul>
+				<div className='form-group'>
 					{filteredTodos.map(todo =>
 						<TodoItem key={todo.id} item={todo} />
 					)}
-				</ul>
-
-				Task completed: {this.props.todostore.completed}
+				</div>
+				<p className='task-completed'>
+					Task completed: {this.props.todostore.completed}
+				</p>
 				<br/>
-				<a href='#' onClick={clearTodos}>Clear todos</a>
+				<a className='btn-clear' href='#' onClick={clearTodos}>Clear todos</a>
 				<DevTools />
 			</div>
 		);
